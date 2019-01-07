@@ -1,46 +1,40 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import React, { Component } from 'react'
+import $ from "jquery";
 
-const styles = {
-  appNav: {
-    "box-shadow": "none",
-    background: "transparent"
-  },
-  grow: {
-    flexGrow: 1,
-    color: "#202124"
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-    color: "#202124"
+export class Navbar extends Component {
+    state = {
+
+    }
+
+    dropMenu = (e) =>{
+        if ($(e.target).html() === "menu") {
+            $(e.target).css({ "transition": "all 0.2s", "transform": "rotate(90deg)"})
+            $(e.target).html('close');
+            $(".dropMenu").animate({ height: $(window).height() + "px"}, 250);
+        }else{
+            $(e.target).css({ "transition": "all 0.2s", "transform": "rotate(0deg)" })
+            $(e.target).html('menu');
+            $(".dropMenu").animate({ height:"0px" }, 250);  
+        }
+
+    }
+
+  render() {
+    return (
+        <div>
+            <div className="dropMenu grey darken-4"></div>
+
+            <nav className="nav-wrapper indigo z-depth-0">
+                <a href="#" className="right" onClick={this.dropMenu}>
+                    <i className="material-icons">menu</i>
+                </a>
+                <a href="#" className="btn-floating btn-large left logo">BS </a>
+            </nav>
+
+            
+        </div>
+    )
   }
-};
-
-function Navbar(props) {
-  const { classes } = props;
-  return <div >
-    <AppBar position="static" className={classes.appNav}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit" className={classes.grow}>News</Typography>
-          <IconButton className={classes.menuButton} aria-label="Menu">
-              <MenuIcon />
-          </IconButton>
-
-        </Toolbar>
-      </AppBar>
-    </div>;
 }
 
-Navbar.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(Navbar);
+export default Navbar
