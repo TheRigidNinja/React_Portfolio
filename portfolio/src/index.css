@@ -1,0 +1,17 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.Curight{
+    cursor: url('./left.png'),auto;
+}
+
+.Culeft{
+    cursor: url('./right.png'),auto;
+}
+
+.defaultMouse{
+   cursor: default; 
+}
