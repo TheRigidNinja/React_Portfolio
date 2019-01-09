@@ -1,0 +1,56 @@
+
+/* Mouse Cursor Change */
+.Curight{
+    cursor: url('../img/Bright.png'),auto;
+}
+
+.Culeft{
+    cursor: url('../img/Bleft.png'),auto;
+}
+
+.defaultMouse{
+   cursor: default; 
+}
+
+.Slide{
+    position: absolute;
+    top: 55px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: calc(100% - 55px);
+    background: olivedrab;
+    overflow: hidden;
+}
+
+.navProject{
+    position: relative;
+    padding: 20px 40px 20px 40px !important;
+    top: 50%;
+    left:100px;
+}
+
+
+.Home,
+.Project1,
+.Project2,
+.Project3,
+.Project4,
+.Project5,
+.Project6,
+.Project7,
+.Project8,
+.Aboutme{
+    position: absolute
+}
+
+/* .Home{z-index: 10;}
+.Project1{z-index: 8;}
+.Project2{z-index: 7;}
+.Project3{z-index: 6;}
+.Project4{z-index: 5;}
+.Project5{z-index: 4;}
+.Project6{z-index: 3;}
+.Project7{z-index: 2;}
+.Project8{z-index: 1;}
+.Aboutme{z-index: 0;} */

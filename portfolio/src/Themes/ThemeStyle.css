@@ -1,0 +1,29 @@
+.Mlight,
+.Mmenu{
+    transition: all 0.2s;
+    color:#fafafa !important;
+}
+
+.Mmenu{transform: rotateZ(90deg)}
+
+
+.MlightRm,
+.MmenuRm{
+    transition: all 0.4s;
+    color:black !important;
+}
+.MmenuRm{transform: rotateZ(0deg)}
+
+
+
+.mouseLight{
+    cursor: url('../img/Wright.png'),auto;
+}
+
+.mouseLightRm{
+    cursor: url('../img/Wleft.png'),auto;
+}
+
+.defaultMouse{
+   cursor: default; 
+}

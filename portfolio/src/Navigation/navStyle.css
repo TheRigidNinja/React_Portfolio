@@ -1,0 +1,52 @@
+.navSize{
+    font-size: 40px !important;
+}
+
+.dropMenu{
+    position: absolute;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    overflow: hidden;
+    height: 0px;
+}
+
+.dropLink{
+    position: relative;
+    top: calc(50% - 150px);
+}
+.social a,
+.dropLink h2{
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.social a:hover,
+.dropLink h2:hover{
+    color: #512da8 !important;
+}
+
+
+.logo{
+    /* background: url('./Navigation/Logo.png'); */
+    position: relative;
+    margin-left: 30px;
+    margin-top:2px;
+}
+
+.social{
+    position: relative;
+    top: calc(100% - 400px);
+}
+
+
+.social a{
+    font-size: 35px;
+    margin-left: 35px;
+}
+
+
+.copyright{
+    position: relative;
+    top: calc(100% - 300px);
+}

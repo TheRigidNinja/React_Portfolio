@@ -1,40 +1,55 @@
 import React, { Component } from 'react'
+import DropNavbar from './dropNavbar'
+import './navStyle.css'
+import { ThemeChange } from '../Themes/ThemeChange'
+import { connect } from "react-redux";
+
 import $ from "jquery";
 
-export class Navbar extends Component {
+class Navbar extends Component {
     state = {
 
     }
 
     dropMenu = (e) =>{
-        if ($(e.target).html() === "menu") {
-            $(e.target).css({ "transition": "all 0.2s", "transform": "rotate(90deg)"})
-            $(e.target).html('close');
-            $(".dropMenu").animate({ height: $(window).height() + "px"}, 250);
-        }else{
-            $(e.target).css({ "transition": "all 0.2s", "transform": "rotate(0deg)" })
-            $(e.target).html('menu');
-            $(".dropMenu").animate({ height:"0px" }, 250);  
-        }
+        // Passing data to ThemeChange;
 
+        if ($(e.target).html() === "menu") {
+            this.props.ThemeChange('Menu'); // Change theme
+
+            $(e.target).html('close');
+            $(".dropMenu").animate({ height: $(window).height() + "px"}, 300);
+        }else{
+            this.props.ThemeChange("MenuRm");// Change theme to default
+
+            $(e.target).html('menu');
+            $(".dropMenu").animate({ height:"0px" }, 300);  
+        }
     }
 
+    
   render() {
     return (
         <div>
-            <div className="dropMenu grey darken-4"></div>
-
-            <nav className="nav-wrapper indigo z-depth-0">
-                <a href="#" className="right" onClick={this.dropMenu}>
-                    <i className="material-icons">menu</i>
+            <DropNavbar />
+            <nav className="nav-wrapper z-depth-0 grey lighten-5">
+                <a href="#" className="right black-text" onClick={this.dropMenu}>
+                    <i className="material-icons navSize navMenu">menu</i>
                 </a>
-                <a href="#" className="btn-floating btn-large left logo">BS </a>
+                <a href="#" className="left logo black-text navSize navLogo">BS</a>
             </nav>
-
+            
             
         </div>
     )
   }
 }
 
-export default Navbar
+
+const mapThemes = (dispatch) => {
+    return {
+        ThemeChange: (pageData) => {ThemeChange(pageData)}
+    }
+}
+
+export default connect(mapThemes)(Navbar);
