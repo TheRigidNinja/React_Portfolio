@@ -1,5 +1,20 @@
-.navSize{
+
+.menuCont{
+    position: relative;
+    z-index: 10;
+}
+
+.navMenu,
+.logo{
+    position: relative;
     font-size: 40px !important;
+    color:var(--navIcons)
+}
+
+.logo{
+    /* background: url('./Navigation/Logo.png'); */
+    margin-left: 80px;
+    margin-top:2px;
 }
 
 .dropMenu{
@@ -7,9 +22,10 @@
     top: 0px;
     padding: 0px;
     margin: 0px;
-    width: 100%;
+    width: calc(100% + 15px);
     overflow: hidden;
     height: 0px;
+    background: #0a0a0a;
 }
 
 .dropLink{
@@ -27,13 +43,6 @@
 }
 
 
-.logo{
-    /* background: url('./Navigation/Logo.png'); */
-    position: relative;
-    margin-left: 30px;
-    margin-top:2px;
-}
-
 .social{
     position: relative;
     top: calc(100% - 400px);
@@ -49,4 +58,22 @@
 .copyright{
     position: relative;
     top: calc(100% - 300px);
+}
+
+/* scrollbar */
+ ::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e7e7e7; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(200, 200, 200); 
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

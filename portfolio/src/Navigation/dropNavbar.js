@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 
 function dropNavbar() {
   return (
-    <div className="dropMenu black">
+    <div className="dropMenu">
       <div className="container center dropLink">
         <Typography component="h2" variant="h2" gutterBottom className="deep-purple-text text-darken-2">PORTFOLIO</Typography>
         <Typography component="h2" variant="h2" gutterBottom className="grey-text text-lighten-5">ABOUT ME</Typography>

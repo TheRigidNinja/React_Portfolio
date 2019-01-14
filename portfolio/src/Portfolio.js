@@ -26,7 +26,7 @@ class Portfolio extends Component {
   render() {
     const Tracker = () => {
       return $(window).width() > 800 ? (
-        <div className="tracNum black-text">
+        <div className="tracNum">
           0{this.props.pageNum}/09
         </div>
       ) : (

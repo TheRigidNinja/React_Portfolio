@@ -6,7 +6,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
 
-
 import Aboutme from './Slider/Aboutme'
 import Home from './Slider/Home'
 import Project1 from './Slider/Project1'
@@ -24,16 +23,16 @@ import { ThemeChange } from "../Themes/ThemeChange";
 class bodySlider extends Component {
   state = {
     Objects: [
-      ".Home",
-      ".Project1",
-      ".Project2",
-      ".Project3",
-      ".Project4",
-      ".Project5",
-      ".Project6",
-      ".Project7",
-      ".Project8",
-      ".Aboutme",
+      "Home",
+      "Project1",
+      "Project2",
+      "Project3",
+      "Project4",
+      "Project5",
+      "Project6",
+      "Project7",
+      "Project8",
+      "Aboutme",
     ],
     CurrentObj: 0
   };
@@ -45,68 +44,84 @@ class bodySlider extends Component {
   }
 
   handleMouseEvent = e => {
-    if (e.pageX > $(window).width() / 2) {
+    if ($(".navMenu").html() === "close" || e.pageY < 62) {
       $("html")
         .removeClass("Culeft")
+        .removeClass("Curight")
+        .addClass("defaultMouse");
+
+    }else if (e.pageX > $(window).width() / 2){
+      $("html")
+        .removeClass("Culeft")
+        .removeClass("defaultMouse")
         .addClass("Curight");
-    } else {
+    }else{
       $("html")
         .removeClass("Curight")
+        .removeClass("defaultMouse")
         .addClass("Culeft");
     }
-    // } else {
-    //   $("html").addClass("defaultMouse");
-    // }
   };
 
   handleSlider = e => {
     let pageClassTag;
     
-    if ( $("html").hasClass("Curight") && this.state.CurrentObj <= this.state.Objects.length - 3) {
-      const nextSlide = this.state.CurrentObj + 1;
-      pageClassTag = this.state.Objects[this.state.Objects.length - nextSlide];
+    if ($("html").hasClass("Curight") && this.state.CurrentObj < this.state.Objects.length - 1) {
 
+      // Page transition 
+      $(`.${this.state.Objects[this.state.CurrentObj + 1]}`).css("z-index","1");
+      $(`.${this.state.Objects[this.state.CurrentObj]}`).animate({ width: "0px" }, 600);
+
+      const nextSlide = this.state.CurrentObj + 1;
       this.setState({ CurrentObj: nextSlide });
-      $(pageClassTag).animate({ width: "0px" }, 800);
+      pageClassTag = this.state.Objects[this.state.CurrentObj];
+
+      
+
+
 
     } else if ($("html").hasClass("Culeft") && this.state.CurrentObj >= 1) {
 
+      
+      // $(`.${this.state.Objects[this.state.CurrentObj]}`).animate({ width: "0px" }, 600);
+
       const nextSlide = this.state.CurrentObj - 1;
-      pageClassTag = this.state.Objects[this.state.Objects.length - nextSlide];
-
       this.setState({ CurrentObj: nextSlide });
-      $(pageClassTag).animate({ width: `${$(window).width()}` }, 800);
+      pageClassTag = this.state.Objects[this.state.CurrentObj];
+      
+      $(`.${this.state.Objects[this.state.CurrentObj - 1]}`).css("z-index", "1");
+      $(`.${this.state.Objects[nextSlide]}`).animate({ width: `${$(window).width()}` }, 600);
+      
     }
-
 
     // updatePage;
     this.props.pageUpdate(this.state.CurrentObj);
 
     // Change theme
-    this.props.ThemeChange(pageClassTag);
+    if (pageClassTag) {
+      this.props.ThemeChange(pageClassTag);
+    }
   };
 
-  // <Button color="primary" size="large" variant="outlined" className="navProject  grey grey lighten-5">VIEW PROJECT</Button> */}
 
   render() {
     return (
       <div className="Slider-Cont">
-        <Aboutme />
+        <Home /><Project2 />
         <Project1 />
-        <Project2 />
+        
         <Project3 />
         <Project4 />
         <Project5 />
         <Project6 />
         <Project7 />
         <Project8 />
-        <Home />
-        {/* <div className="Slide grey darken-4"></div>
-          <div className="Slide grey lighten-5"></div> */}
+        <Aboutme />
       </div>
     );
   }
 }
+
 
 
 const mapStateToProps = (state) => {
@@ -114,7 +129,6 @@ const mapStateToProps = (state) => {
     pageNum: state.pageNum
   }
 }
-
 
 const mapDispatchToProps = (dispatch) => {
   return {

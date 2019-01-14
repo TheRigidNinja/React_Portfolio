@@ -1,3 +1,22 @@
+:root{
+    --MBinvertR:url('../img/BMright.png'),auto;
+    --MBinvertL:url('../img/BMleft.png'),auto;
+
+    --MWinvertR:url('../img/WMright.png'),auto;
+    --MWinvertL:url('../img/WMleft.png'),auto;
+    
+    --MouseR:var(--MWinvertR);
+    --MouseL:var(--MWinvertL);
+    --navIcons:#fafafa;
+    --bgColor:black;
+}
+
+
+
+
+
+
+/* 
 .Mlight,
 .Mmenu{
     transition: all 0.2s;
@@ -26,4 +45,4 @@
 
 .defaultMouse{
    cursor: default; 
-}
+} */

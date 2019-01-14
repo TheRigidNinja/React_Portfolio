@@ -6,8 +6,7 @@ import Typography from "@material-ui/core/Typography";
 
 function Home(props) {
   return (
-    <div className="Slide grey darken-4 Home">
-
+    <div className="Slide black Home">
     </div>
   )
 }

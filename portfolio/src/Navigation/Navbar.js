@@ -13,15 +13,12 @@ class Navbar extends Component {
 
     dropMenu = (e) =>{
         // Passing data to ThemeChange;
-
         if ($(e.target).html() === "menu") {
-            this.props.ThemeChange('Menu'); // Change theme
-
             $(e.target).html('close');
-            $(".dropMenu").animate({ height: $(window).height() + "px"}, 300);
+            $(".dropMenu").animate({ height: $(window).height()+"px"}, 300);
+            this.props.ThemeChange("Menu");
         }else{
-            this.props.ThemeChange("MenuRm");// Change theme to default
-
+            this.props.ThemeChange("MenuRm");
             $(e.target).html('menu');
             $(".dropMenu").animate({ height:"0px" }, 300);  
         }
@@ -29,19 +26,17 @@ class Navbar extends Component {
 
     
   render() {
-    return (
-        <div>
-            <DropNavbar />
-            <nav className="nav-wrapper z-depth-0 grey lighten-5">
-                <a href="#" className="right black-text" onClick={this.dropMenu}>
-                    <i className="material-icons navSize navMenu">menu</i>
-                </a>
-                <a href="#" className="left logo black-text navSize navLogo">BS</a>
-            </nav>
-            
-            
-        </div>
-    )
+    return <div className="menuCont">
+        <DropNavbar />
+        <nav className="nav-wrapper z-depth-0 transparent">
+          <a href="#" className="right" onClick={this.dropMenu}>
+            <i className="material-icons navMenu">menu</i>
+          </a>
+          <a href="#" className="left logo">
+            BS
+          </a>
+        </nav>
+      </div>;
   }
 }
 
