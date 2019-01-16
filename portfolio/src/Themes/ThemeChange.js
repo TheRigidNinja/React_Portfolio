@@ -19,16 +19,17 @@ export function ThemeChange(pageAction) {
 
   
     if (Themes[pageAction]) {
+      console.log(Themes[pageAction]["Action"]);
+
       if (Themes[pageAction]["Action"]) {
         if (pageAction.includes("Rm")) {
           $("body").css(Themes[pageAction]);
         } else {
           $.each(Themes[pageAction]["Style"], function(key, value) {
-            Themes[`${pageAction}Rm`] = { [key]: $("body").css(key) };
+            Themes[`${pageAction}Rm`] = { [key]: $("body").css(key), Action: "Toggle"};
           });
           $("body").css(Themes[pageAction]["Style"]);
         }
-
       }else{
         $("html").css(Themes[pageAction]);
       }

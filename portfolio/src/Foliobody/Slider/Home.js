@@ -5,10 +5,19 @@ import Typography from "@material-ui/core/Typography";
 
 
 function Home(props) {
-  return (
-    <div className="Slide black Home">
+  return <div className="Slide black Home">
+
+    <div class="grey-text text-lighten-5">
+
+      <h3 class="">I'm Sadok, an award-winning<strong>Product Designer</strong> that <strong>codes</strong>.
+      I'm committed to <strong>UX</strong>,<strong>Humanitarian Causes</strong> and<strong>Education</strong>. <br /><br />
+      I strive to design solutions that improve the <strong>
+      quality of life</strong> of millions of people.</h3>
+      <h6 class="subtitle">Start scrolling to take a look at my portfolio, and let's create something big together.</h6>
+
     </div>
-  )
+
+    </div>
 }
 
 export default Home;

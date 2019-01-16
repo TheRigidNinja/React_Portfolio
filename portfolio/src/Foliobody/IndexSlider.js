@@ -41,21 +41,58 @@ class bodySlider extends Component {
     $("html").bind("mouseenter", this.handleMouseEvent);
     $("html").bind("mousemove", this.handleMouseEvent);
     $("html").bind("click", this.handleSlider);
+    $(".viewProject").bind();
+    // $(".Project1").bind("mousewheel", this.activate(this));
   }
 
+
+
+
+
+
+  // Menu events
+activate = (e,type) => {
+
+  console.log(type);
+
+  // if (e.originalEvent.wheelDelta >= 0) {
+  //   console.log('Scroll up');
+  // }
+  // else {
+  //   console.log('Scroll down');
+  // }
+
+
+
+
+
+    // $(".Project1").css({ "overflow-y": "scroll" });
+    // $(".viewProject").animate({ opacity: 0 }, 10, () => {
+    //   $(".Project1").animate({ scrollTop: 400 }, 600);
+    //   $(".menuCont").animate({ height: 0, top: -100 }, 600);
+    // });
+
+  }
+
+
+
+
+
+
+
+
   handleMouseEvent = e => {
-    if ($(".navMenu").html() === "close" || e.pageY < 62) {
+    if ($(".navMenu").html() === "close" || e.pageY < 62 || e.target.innerHTML === "VIEW PROJECT" || e.target.nodeName === "BUTTON") {
       $("html")
         .removeClass("Culeft")
         .removeClass("Curight")
         .addClass("defaultMouse");
-
-    }else if (e.pageX > $(window).width() / 2){
+    } else if (e.pageX > $(window).width() / 2) {
       $("html")
         .removeClass("Culeft")
         .removeClass("defaultMouse")
         .addClass("Curight");
-    }else{
+    } else {
       $("html")
         .removeClass("Curight")
         .removeClass("defaultMouse")
@@ -76,15 +113,9 @@ class bodySlider extends Component {
       this.setState({ CurrentObj: nextSlide });
       pageClassTag = this.state.Objects[this.state.CurrentObj];
 
-      
-
-
-
     } else if ($("html").hasClass("Culeft") && this.state.CurrentObj >= 1) {
 
-      
       // $(`.${this.state.Objects[this.state.CurrentObj]}`).animate({ width: "0px" }, 600);
-
       const nextSlide = this.state.CurrentObj - 1;
       this.setState({ CurrentObj: nextSlide });
       pageClassTag = this.state.Objects[this.state.CurrentObj];
@@ -107,16 +138,17 @@ class bodySlider extends Component {
   render() {
     return (
       <div className="Slider-Cont">
-        <Home /><Project2 />
+        <Home />
         <Project1 />
+        {/* <Project2 /> */}
         
-        <Project3 />
+        {/* <Project3 />
         <Project4 />
         <Project5 />
         <Project6 />
         <Project7 />
         <Project8 />
-        <Aboutme />
+        <Aboutme /> */}
       </div>
     );
   }
