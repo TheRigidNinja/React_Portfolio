@@ -1,7 +1,8 @@
 import $ from "jquery";
 
 var Themes = {
-  Menu: { Style: { "--navIcons": "#fafafa"},Action:"Toggle"},
+    Duplicate: ["Menu"],
+    Menu: {"--navIcons": "#fafafa"},
     Home: { "--navIcons": "#fafafa","--MouseR":"var(--MWinvertR)", "--MouseL": "var(--MWinvertL)"},
     Project1: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
     Project2: { "--navIcons": "#fafafa" },
@@ -16,23 +17,18 @@ var Themes = {
 
 
 export function ThemeChange(pageAction) {
-
-  
+    // console.log(Themes, pageAction);
+    
     if (Themes[pageAction]) {
-      console.log(Themes[pageAction]["Action"]);
 
-      if (Themes[pageAction]["Action"]) {
-        if (pageAction.includes("Rm")) {
-          $("body").css(Themes[pageAction]);
-        } else {
-          $.each(Themes[pageAction]["Style"], function(key, value) {
-            Themes[`${pageAction}Rm`] = { [key]: $("body").css(key), Action: "Toggle"};
-          });
-          $("body").css(Themes[pageAction]["Style"]);
+        if (Themes["Duplicate"].includes(pageAction)) {
+            $.each(Themes[pageAction], function (key, value) {
+                Themes[`${pageAction}Rm`] = { [key]: $("html").css(key) };
+            });
         }
-      }else{
+
         $("html").css(Themes[pageAction]);
-      }
+
     }else{
         console.log("This is not referenced in theme componet");
     }

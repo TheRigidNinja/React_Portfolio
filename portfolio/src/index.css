@@ -1,23 +1,18 @@
 body{
     margin: 0px;
     padding: 0px;
-    line-height: 1.3125;
-    font-weight: 500;
-    /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
-    /* overflow-y: scroll;
-    overflow-x: hidden;   */
 }
 
-
+/* 
 .right{
     margin-right:50px !important; 
 }
-
+*/
 
 .tracNum{
     position: absolute;
     top: calc(100% - 30px);
     left: calc(50% - 20px);
     color: var(--navIcons);
-    /* opacity: 0; */
-}
+    z-index: 10;
+} 

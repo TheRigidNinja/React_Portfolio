@@ -1,16 +1,22 @@
 const InitState = {
-    pageNum: 0
+    pageNum: 0,
+    binder:null
 }
 
 const rootReducer = (state = InitState, action) => {
-
+  
   if (action.type === "UPDATE") {
-      let pageUpdate = action.data;
       return{
         ...state,
-        pageNum: pageUpdate
-      }
+        pageNum: action.data
+      } 
+  }
 
+  if (action.type === "BINDER") {
+    return {
+      ...state,
+      binder: action.data
+    }
   }
   return state;
 };

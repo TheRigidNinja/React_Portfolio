@@ -1,4 +1,5 @@
 /* Mouse Cursor Change */
+
 .Curight{cursor: var(--MouseR)}
 .Culeft{cursor: var(--MouseL)}
 .defaultMouse{cursor: default;}
@@ -9,16 +10,19 @@
     margin: 0px;
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    background:#fafafa;
+    /* overflow-y: scroll; */
 }
 
+
+
+/*
 .navProject{
     position: relative;
     padding: 20px 40px 20px 40px !important;
     top: 50%;
     left:100px;
-}
+}*/
 
 
 .Home,
@@ -33,15 +37,18 @@
 .Aboutme{
     position: absolute;
     overflow: hidden;
-    z-index: -1;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 .Home{
-    z-index: 2;
-} 
+    z-index: 1;
+}
 
-.Home div{
-    padding: 10% 0px 0px 90px;
+.Home .Slide div{
+    padding: 10% 0px 0px 80px;
     width: 55%;
 }
 
@@ -56,22 +63,13 @@
     margin: 30px 0px 30px 0px;
 }
 
-
-/* 
-.mobNext{
-    position: absolute !important;
-    top: calc(100% - 60px);
-    left: calc(100% - 120px);
-    padding: 10px 20px 10px 20px !important; 
-} */
-
  .viewProject{
     position: absolute !important;
     top:60%;
     background: #fafafa;
     color: black;
     border: 2px solid black !important;
-    left: calc(30px + 5.5%);
+    margin-left: 80px;
 }
 
 .viewProject:hover{
@@ -82,7 +80,10 @@
     position: absolute;
     top: 100%;
     width: 100%;
-    height: 500px;
+    height: auto;
+    background:#fafafa;
+    padding: 0px;
+    margin: 0px;
 }
 
 .row{
