@@ -11,12 +11,12 @@ class Navbar extends Component {
         // Passing data to ThemeChange;
         if ($(e.target).html() === "menu") {
             $(".navMenu").css({ transform: "rotateZ(90deg)translate(28px, -15px)" });
-            $(".navMenu").html("close");
+            $(".navMenu").find($(".material-icons")).html("close");
             $(".dropMenu").animate({ height: $(window).height()+"px"}, 300);
             this.props.ThemeChange("Menu");
         }else{
             this.props.ThemeChange("MenuRm");
-            $(".navMenu").html("menu");
+            $(".navMenu").find($(".material-icons")).html("menu");
             $(".navMenu").css({ transform: "rotateZ(0deg)" });
             $(".dropMenu").animate({ height:"0px" }, 300);  
         }

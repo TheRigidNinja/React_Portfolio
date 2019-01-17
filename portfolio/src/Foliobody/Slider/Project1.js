@@ -1,11 +1,6 @@
 import React from 'react'
-import $ from "jquery";
-// import Button from "@material-ui/core/Button";
-// import { connect } from "react-redux";
-
 
 function Project1({activate}) {
-  // console.log(activate);() => { activate("Project1") 
   return (//Slide  
     <div className="Project1">
       <div className="Slide">

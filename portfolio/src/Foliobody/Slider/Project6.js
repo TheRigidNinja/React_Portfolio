@@ -1,11 +1,71 @@
-import React from 'react'
+import React from "react";
 
-function Project6() {
+function Project6({ activate }) {
   return (
-    <div className="Slide grey lighten-5 Project6">
-      
+    //Slide
+    <div className="Project6">
+      <div className="Slide">
+        <a
+          className="btn-large waves-effect waves-light viewProject z-depth-0"
+          onClick={() => {
+            activate("Project6");
+          }}
+        >
+          VIEW PROJECT
+        </a>
+        <div className="row moreInfo">
+          <div className="col s12 m6 l6 intro">
+            <h4>Background</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
+              unde, culpa, sequi quae, doloremque accusamus fugit natus aliquid
+              possimus esse corporis. Aperiam deleniti est consectetur minima
+              officia quibusdam eligendi quisquam! Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Hic unde, culpa, sequi quae,
+              doloremque accusamus fugit natus aliquid possimus esse corporis.
+              Aperiam deleniti est consectetur minima officia quibusdam eligendi
+              quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Hic unde, culpa, sequi quae, doloremque accusamus fugit
+              natus aliquid possimus esse corporis. Aperiam deleniti est
+              consectetur minima officia quibusdam eligendi quisquam!
+            </p>
+          </div>
+          <div className="col s12 m6 l6 intro">
+            <h4>Scope</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
+              unde, culpa, sequi quae, doloremque accusamus fugit natus aliquid
+              possimus esse corporis. Aperiam deleniti est consectetur minima
+              officia quibusdam eligendi quisquam! Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Hic unde, culpa, sequi quae,
+              doloremque accusamus fugit natus aliquid possimus esse corporis.
+              Aperiam deleniti est consectetur minima officia quibusdam eligendi
+              Quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Hic unde, culpa, sequi quae, doloremque accusamus fugit
+              natus aliquid possimus esse corporis. Aperiam deleniti est
+              consectetur minima officia quibusdam eligendi quisquam!
+            </p>
+          </div>
+          <div className="col s12 m12 l12 details">
+            <h4>Process</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
+              unde, culpa, sequi quae, doloremque accusamus fugit natus aliquid
+              possimus esse corporis. Aperiam deleniti est consectetur minima
+              officia quibusdam eligendi quisquam! Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Hic unde, culpa, sequi quae,
+              doloremque accusamus fugit natus aliquid possimus esse corporis.
+              Aperiam deleniti est consectetur minima officia quibusdam eligendi
+              Quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Hic unde, culpa, sequi quae, doloremque accusamus fugit
+              natus aliquid possimus esse corporis. Aperiam deleniti est
+              consectetur minima officia quibusdam eligendi quisquam!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Project6
+export default Project6;

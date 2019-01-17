@@ -44,7 +44,6 @@ class bodySlider extends Component {
 
   // Menu events
 activate = (type) => {
-  
     // Bind scroll action
   if (this.props.binder != type && typeof (type) != "object") {
     let button = $(`.${type}`).find($(".viewProject"));
@@ -59,11 +58,7 @@ activate = (type) => {
         $(".navClose").attr("style", "display: block !important");
       }, 400);
     });
-    
-    
-    // this.setState({ binderScroll: type });
-    // this.props.binderScroll(type);
-    console.log(this.props.binder);
+
       this.props.binderScroll(type);
       $(`.${type}`).bind("mousewheel", this.activate);
     }else{
@@ -78,10 +73,8 @@ activate = (type) => {
 
 
   handleMouseEvent = e => {
-    // console.log(this.state);
-    // console.log(e.target.nodeName);
 
-    if ($(".navMenu").html() === "close" || e.target.nodeName == "A" || e.target.nodeName == "I" ) {
+    if ($(".navMenu").find($(".material-icons")).html() === "close" || e.target.nodeName == "A" || e.target.nodeName == "I" ) {
       $("html")
         .removeClass("Culeft")
         .removeClass("Curight")
@@ -133,6 +126,14 @@ activate = (type) => {
     // Change theme
     if (pageClassTag) {
       this.props.ThemeChange(pageClassTag);
+
+      // TrackerNum
+      if (pageClassTag == "Home") {
+        $(".tracNum").css("opacity", 0);
+      }else{
+        $(".tracNum").css("opacity",1);
+      }
+
     }
   };
 

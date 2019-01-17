@@ -7,9 +7,16 @@
 
 
 .navLogo,
-.material-icons{
-    position: relative;
+.navClose,
+.navMenu{
     transition: all 0.4s;
+}
+
+
+.navLogo,
+.material-icons{
+    transition: all 0.4s;
+    position: relative;
     color:var(--navIcons) !important;
     font-size: 35px !important;
     margin: 5px 80px 0px 80px !important;

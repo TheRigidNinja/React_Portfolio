@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Project2() {
-  return (
+function Project2({ activate }) {
+  return (//Slide  
     <div className="Project2">
-      <div className="Slide orange">
-        <a className="btn-large waves-effect waves-light  viewProject z-depth-0" >VIEW PROJECT</a>
+      <div className="Slide">
+        <a className="btn-large waves-effect waves-light viewProject z-depth-0" onClick={() => { activate("Project2") }}>VIEW PROJECT</a>
         <div className="row moreInfo">
           <div className="col s12 m6 l6 intro">
             <h4>Background</h4>
@@ -65,9 +65,8 @@ function Project2() {
           </div>
         </div>
       </div>
-
     </div>
   )
 }
 
-export default Project2
+export default Project2;
