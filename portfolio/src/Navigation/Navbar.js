@@ -28,11 +28,15 @@ class Navbar extends Component {
             elm.animate({ scrollTop: 0 }, 600,()=>{
                 $(".navCont").css("background", "transparent");
                 $(".navClose").attr('style', 'display: none !important');
+                elm.find($(".viewProject")).css("display", "block");
+                $("html").css({ "--MouseR": "var(--MBinvertR)", "--MouseL": "var(--MBinvertL)" });
+                $(".tracNum").css("opacity", 1);
                 elm.find($(".viewProject")).animate({ opacity: 1 }, 10, () => {
-                    elm.find($(".viewProject")).css("display", "block");
-                    elm.css("overflow","hidden");
-                    elm.unbind("mousewheel");
-                    this.props.binderScroll(null);
+                    setTimeout(() => {
+                        elm.css("overflow", "hidden");
+                        elm.unbind("mousewheel");
+                        this.props.binderScroll(null); 
+                    }, 200);
                 });
             });
 

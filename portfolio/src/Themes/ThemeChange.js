@@ -5,13 +5,13 @@ var Themes = {
     Menu: {"--navIcons": "#fafafa"},
     Home: { "--navIcons": "#fafafa","--MouseR":"var(--MWinvertR)", "--MouseL": "var(--MWinvertL)"},
     Project1: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
-    Project2: { "--navIcons": "#fafafa" },
+    Project2: { "--navIcons": "black", "--MouseR": "var(--MBinvertR)", "--MouseL": "var(--MBinvertL)" },
     Project3: { "--navIcons": "#fafafa" },
-    Project4: { "--navIcons": "#fafafa" },
-    Project5: { "--navIcons": "#fafafa" },
-    Project6: { "--navIcons": "#fafafa" },
-    Project7: { "--navIcons": "#fafafa" },
-    Project8: { "--navIcons": "#fafafa" },
+    Project4: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
+    Project5: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
+    Project6: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
+    Project7: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
+    Project8: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
     Aboutme: { "--navIcons": "#fafafa" }
 }
 

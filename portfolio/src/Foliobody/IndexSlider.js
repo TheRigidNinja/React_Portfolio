@@ -49,13 +49,15 @@ activate = (type) => {
     let button = $(`.${type}`).find($(".viewProject"));
     $(`.${type}`).css({ "overflow-y": "scroll" });
     button.animate({ opacity: 0 }, 10, () => {
-      button.css("display", "none");
+
       $(`.${type}`).animate({ scrollTop: 400 }, 600);
       $(".menuCont").animate({ height: 0, top: -100 }, 200);
-
+      $("html").css({ "--MouseR": "auto", "--MouseL": "auto" });
+      $(".tracNum").css("opacity",0);
       setTimeout(() => {
         $(".navCont").css("background", "#fafafa");
         $(".navClose").attr("style", "display: block !important");
+        button.css("display", "none");
       }, 400);
     });
 
@@ -73,8 +75,7 @@ activate = (type) => {
 
 
   handleMouseEvent = e => {
-
-    if ($(".navMenu").find($(".material-icons")).html() === "close" || e.target.nodeName == "A" || e.target.nodeName == "I" ) {
+    if ($(".navMenu").find($(".material-icons")).html() === "close" || e.target.nodeName === "A" || e.target.nodeName === "I" || this.props.binder !== null) {
       $("html")
         .removeClass("Culeft")
         .removeClass("Curight")

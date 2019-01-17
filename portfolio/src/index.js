@@ -8,7 +8,6 @@ import './index.css'
 import "./Themes/ThemeStyle.css";
 const store = createStore(rootReducer);
 
-
 ReactDOM.render(
   <Provider store={store}>
     <Portfolio />

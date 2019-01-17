@@ -1,8 +1,12 @@
 body{
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
+p{
+    font-weight: 350;
+}
 /* 
 .right{
     margin-right:50px !important; 
