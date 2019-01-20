@@ -12,7 +12,7 @@ var Themes = {
     Project6: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
     Project7: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
     Project8: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
-    Aboutme: { "--navIcons": "#fafafa" }
+    Contacts: { "--navIcons": "#fafafa" }
 }
 
 

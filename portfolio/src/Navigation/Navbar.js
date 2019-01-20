@@ -2,14 +2,17 @@ import React, { Component } from 'react'
 import DropNavbar from './dropNavbar'
 import './navStyle.css'
 import { ThemeChange } from '../Themes/ThemeChange'
+import Aboutme from "../Foliobody/Slider/Aboutme";
+// import Home from "../Foliobody/Slider/Home";
 import { connect } from "react-redux";
 import $ from "jquery";
+import { BrowserRouter, Route, Switch} from "react-router-dom"
 
 class Navbar extends Component {
 
     dropMenu = (e) =>{
         // Passing data to ThemeChange;
-        if ($(e.target).html() === "menu") {
+        if ($(".navMenu").find($(".material-icons")).html() === "menu") {
             $(".navMenu").css({ transform: "rotateZ(90deg)translate(28px, -15px)" });
             $(".navMenu").find($(".material-icons")).html("close");
             $(".dropMenu").animate({ height: $(window).height()+"px"}, 300);
@@ -45,16 +48,23 @@ class Navbar extends Component {
         }
     }
 
+    // Navigate to about me 
+
   render() {
     return(
+        <BrowserRouter>
         <div className="menuCont">
-            <DropNavbar />
+            <DropNavbar/>
+            <Route exact path="/Aboutme" component={Aboutme} />
+            
+            
             <nav className="navCont z-depth-0">
-                <a href="#" className="brand-logo navLogo left">BS</a>
+                <a href="#" className="brand-logo navLogo left" onClick={()=>{window.location.reload()}}>BS</a>
                 <a href="#" className="brand-logo center navClose" onClick={this.closeMenu}><i className="material-icons">close</i></a>
                 <a href="#" className="brand-logo right navMenu" onClick={this.dropMenu}><i className="material-icons">menu</i></a>
             </nav>
         </div>
+        </BrowserRouter>
     )
   }
 }

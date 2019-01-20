@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import $ from "jquery";
 
-import Aboutme from './Slider/Aboutme'
+import Contacts from "./Slider/Contacts";
 import Home from './Slider/Home'
 import Project1 from './Slider/Project1'
 import Project2 from './Slider/Project2'
@@ -28,54 +28,58 @@ class bodySlider extends Component {
       "Project6",
       "Project7",
       "Project8",
-      "Aboutme",
+      "Contacts"
     ],
-    CurrentObj: 0,
+    CurrentObj: 0
   };
 
   componentDidMount() {
-    $(".Slide").css({"width":$(window).width(),"height":$(window).height()});
+    $(".Slide").css({ width: $(window).width(), height: $(window).height() });
 
     $("html").bind("mouseenter", this.handleMouseEvent);
     $("html").bind("mousemove", this.handleMouseEvent);
     $("html").bind("click", this.handleSlider);
   }
 
-
   // Menu events
-activate = (type) => {
+  activate = type => {
     // Bind scroll action
-  if (this.props.binder != type && typeof (type) != "object") {
-    let button = $(`.${type}`).find($(".viewProject"));
-    $(`.${type}`).css({ "overflow-y": "scroll" });
-    button.animate({ opacity: 0 }, 10, () => {
-
-      $(`.${type}`).animate({ scrollTop: 400 }, 600);
-      $(".menuCont").animate({ height: 0, top: -100 }, 200);
-      $("html").css({ "--MouseR": "auto", "--MouseL": "auto" });
-      $(".tracNum").css("opacity",0);
-      setTimeout(() => {
-        $(".navCont").css("background", "#fafafa");
-        $(".navClose").attr("style", "display: block !important");
-        button.css("display", "none");
-      }, 400);
-    });
+    if (this.props.binder != type && typeof type != "object") {
+      let button = $(`.${type}`).find($(".viewProject"));
+      $(`.${type}`).css({ "overflow-y": "scroll" });
+      button.animate({ opacity: 0 }, 10, () => {
+        $(`.${type}`).animate({ scrollTop: 400 }, 600);
+        $(".menuCont").animate({ height: 0, top: -100 }, 200);
+        $("html").css({ "--MouseR": "auto", "--MouseL": "auto" });
+        $(".tracNum").css("opacity", 0);
+        setTimeout(() => {
+          $(".navCont").css("background", "#fafafa");
+          $(".navClose").attr("style", "display: block !important");
+          button.css("display", "none");
+        }, 400);
+      });
 
       this.props.binderScroll(type);
       $(`.${type}`).bind("mousewheel", this.activate);
-    }else{
+    } else {
       if (type.originalEvent.wheelDelta >= 0) {
-        $(".menuCont").css({ height:64, top: 0 });
-      }else {
+        $(".menuCont").css({ height: 64, top: 0 });
+      } else {
         $(".menuCont").css({ height: 0, top: -100 });
       }
     }
-    
-  }
-
+  };
 
   handleMouseEvent = e => {
-    if ($(".navMenu").find($(".material-icons")).html() === "close" || e.target.nodeName === "A" || e.target.nodeName === "I" || this.props.binder !== null) {
+    if (
+      $(".navMenu")
+        .find($(".material-icons"))
+        .html() === "close" ||
+      e.target.nodeName === "A" ||
+      e.target.nodeName === "I" ||
+      this.props.binder !== null ||
+      e.target.className.includes("navCont")
+    ) {
       $("html")
         .removeClass("Culeft")
         .removeClass("Curight")
@@ -93,36 +97,45 @@ activate = (type) => {
     }
   };
 
-  // Move to next slides 
+  // Move to next slides
   handleSlider = e => {
     let pageClassTag;
 
-    if ($("html").hasClass("Curight") && this.state.CurrentObj < this.state.Objects.length-1) {
-
-      
-      $(`.${this.state.Objects[this.state.CurrentObj]}`).animate({ width: "0px" }, 500, () => {
-        $(`.${this.state.Objects[this.state.CurrentObj]}`).css("z-index", "1");
-      });
+    if (
+      $("html").hasClass("Curight") &&
+      this.state.CurrentObj < this.state.Objects.length - 1
+    ) {
+      $(`.${this.state.Objects[this.state.CurrentObj]}`).animate(
+        { width: "0px" },
+        500,
+        () => {
+          $(`.${this.state.Objects[this.state.CurrentObj]}`).css(
+            "z-index",
+            "1"
+          );
+        }
+      );
 
       let nextSlide = this.state.CurrentObj + 1;
       this.setState({ CurrentObj: nextSlide });
 
       pageClassTag = this.state.Objects[this.state.CurrentObj];
-    }else if ($("html").hasClass("Culeft") && this.state.CurrentObj > 0){
-
+    } else if ($("html").hasClass("Culeft") && this.state.CurrentObj > 0) {
       let provSlide = this.state.CurrentObj - 1;
       this.setState({ CurrentObj: provSlide });
 
       pageClassTag = this.state.Objects[this.state.CurrentObj];
-      $(`.${this.state.Objects[provSlide]}`).animate({ width: $(window).width() }, 500, () => {
-        $(`.${this.state.Objects[provSlide]}`).css("z-index", "1");
-      });
+      $(`.${this.state.Objects[provSlide]}`).animate(
+        { width: $(window).width() },
+        500,
+        () => {
+          $(`.${this.state.Objects[provSlide]}`).css("z-index", "1");
+        }
+      );
     }
 
     // updatePage;
     this.props.pageUpdate(this.state.CurrentObj);
-
-    console.log(this.props);
 
     // Change theme
     if (pageClassTag) {
@@ -131,29 +144,28 @@ activate = (type) => {
       // TrackerNum
       if (pageClassTag == "Home") {
         $(".tracNum").css("opacity", 0);
-      }else{
-        $(".tracNum").css("opacity",1);
+      } else {
+        $(".tracNum").css("opacity", 1);
       }
-
     }
   };
 
-
   render() {
     return (
-      <div className="Slider-Cont">
-        <Aboutme activate={this.activate}/>
-        <Project8 activate={this.activate}/>
-        <Project7 activate={this.activate}/>
-        <Project6 activate={this.activate}/>
-        <Project5 activate={this.activate}/>
-        <Project4 activate={this.activate}/>
-        <Project3 activate={this.activate}/>
-        <Project2 activate={this.activate}/>
-        <Project1 activate ={this.activate}/>
-        <Home />
+        <div className="Slider-Cont">
+          <Contacts activate={this.activate} />
+          <Project8 activate={this.activate} />
+          <Project7 activate={this.activate} />
+          <Project6 activate={this.activate} />
+          <Project5 activate={this.activate} />
+          <Project4 activate={this.activate} />
+          <Project3 activate={this.activate} />
+          <Project2 activate={this.activate} />
+          <Project1 activate={this.activate} />
+          <Home />
+        </div>
         
-      </div>
+      
     );
   }
 }

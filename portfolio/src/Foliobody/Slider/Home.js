@@ -1,7 +1,4 @@
 import React from 'react'
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 
 
 function Home(props) {
@@ -9,7 +6,7 @@ function Home(props) {
     <div className="Home">
       <div className="Slide black">
         <div class="grey-text text-lighten-5">
-          <h3 class="">I'm Sadok, an award-winning<strong>Product Designer</strong> that <strong>codes</strong>.
+          <h3 class="">I'm Brian, a self-taught<strong>Developer</strong>.
           I'm committed to <strong>UX</strong>,<strong>Humanitarian Causes</strong> and<strong>Education</strong>. <br /><br />
           I strive to design solutions that improve the <strong>
           quality of life</strong> of millions of people.</h3>

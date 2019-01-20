@@ -55,16 +55,20 @@
     height: 0px;
     background: #0a0a0a;
     z-index: 10;
+    
 }
 
 .dropLink{
     position: relative;
     top: calc(50% - 150px);
+    color: #fafafa !important;
 }
 .social a,
 .dropLink h2{
+    font-weight: 600;
     transition: all 0.2s;
     cursor: pointer;
+    color: #fafafa !important;
 }
 .social a:hover,
 .dropLink h2:hover{
@@ -85,22 +89,24 @@
 
 .copyright{
     position: relative;
-    top: calc(100% - 300px);
+    top: calc(100% - 320px);
+    font-weight: 500;
 }
 
  ::-webkit-scrollbar {
-  width: 15px;
+     background: none;
+     width: 0px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e7e7e7; 
+  background: none; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(200, 200, 200); 
-  border-radius: 2px;
+  background: none 
+  /* border-radius: 2px; */
 }
 
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
   background: #555; 
-}
+} */
