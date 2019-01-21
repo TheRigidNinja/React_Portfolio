@@ -5,14 +5,7 @@ function Project8({ activate }) {
     //Slide
     <div className="Project8">
       <div className="Slide indigo">
-        <a
-          className="btn-large waves-effect waves-light viewProject z-depth-0"
-          onClick={() => {
-            activate("Project8");
-          }}
-        >
-          VIEW PROJECT
-        </a>
+        <span className="btn-large waves-effect waves-light viewProject z-depth-0" onClick={() => { activate("Project8") }}>VIEW PROJECT</span>
         <div className="row moreInfo">
           <div className="col s12 m6 l6 intro">
             <h4>Background</h4>

@@ -18,7 +18,7 @@ class Portfolio extends Component {
           0{this.props.pageNum}/09
         </div>
       ) : (
-            <a className="btn-small waves-effect waves-light z-depth-0 iconMobNext"><i className="material-icons ">arrow_forward_ios</i></a>
+            <span className="btn-small waves-effect waves-light z-depth-0 iconMobNext"><i className="material-icons ">arrow_forward_ios</i></span>
       )
     )
     }

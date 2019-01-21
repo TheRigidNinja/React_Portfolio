@@ -6,6 +6,9 @@ import rootReducer from "./Reducers/rootReducer";
 import Portfolio from './Portfolio'
 import './index.css'
 import "./Themes/ThemeStyle.css";
+import * as serviceWorker from "./serviceWorker";
+
+
 const store = createStore(rootReducer);
 
 ReactDOM.render(
@@ -14,3 +17,5 @@ ReactDOM.render(
   </Provider>,
   document.querySelector(".Folio")
 );
+
+serviceWorker.register();

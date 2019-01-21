@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Contacts({ activate }) {
   return (
@@ -6,10 +7,10 @@ function Contacts({ activate }) {
     <div className="Contacts">
       <div className="Slide">
 
-        <h2>ABOUT ME</h2>
+        <h2 className="center">ABOUT ME</h2>
         <p>Hi there</p>
 
-        <a className="btn-large waves-effect waves-light viewProject z-depth-0" onClick={() => {activate("Contacts");}}> READ MORE </a>
+        <Link to="/AboutMe"><span className="btn-large waves-effect waves-light viewProject z-depth-0">VIEW PROJECT</span></Link>
         
       </div>
     </div>

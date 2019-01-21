@@ -16,6 +16,7 @@
 
 .navLogo,
 .material-icons{
+    cursor: pointer;
     font-weight: 900;
     transition: all 0.4s;
     position: relative;
@@ -63,14 +64,14 @@
     top: calc(50% - 150px);
     color: #fafafa !important;
 }
-.social a,
+.social span,
 .dropLink h2{
     font-weight: 600;
     transition: all 0.2s;
     cursor: pointer;
     color: #fafafa !important;
 }
-.social a:hover,
+.social span:hover,
 .dropLink h2:hover{
     color: #512da8 !important;
 }
@@ -82,7 +83,7 @@
 }
 
 
-.social a{
+.social span{
     font-size: 35px;
     margin-left: 35px;
 }

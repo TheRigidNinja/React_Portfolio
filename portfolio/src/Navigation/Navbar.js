@@ -2,14 +2,10 @@ import React, { Component } from 'react'
 import DropNavbar from './dropNavbar'
 import './navStyle.css'
 import { ThemeChange } from '../Themes/ThemeChange'
-import Aboutme from "../Foliobody/Slider/Aboutme";
-// import Home from "../Foliobody/Slider/Home";
 import { connect } from "react-redux";
 import $ from "jquery";
-import { BrowserRouter, Route, Switch} from "react-router-dom"
-
+import { BrowserRouter, Link} from "react-router-dom"
 class Navbar extends Component {
-
     dropMenu = (e) =>{
         // Passing data to ThemeChange;
         if ($(".navMenu").find($(".material-icons")).html() === "menu") {
@@ -53,17 +49,14 @@ class Navbar extends Component {
   render() {
     return(
         <BrowserRouter>
-        <div className="menuCont">
-            <DropNavbar/>
-            <Route exact path="/Aboutme" component={Aboutme} />
-            
-            
-            <nav className="navCont z-depth-0">
-                <a href="#" className="brand-logo navLogo left" onClick={()=>{window.location.reload()}}>BS</a>
-                <a href="#" className="brand-logo center navClose" onClick={this.closeMenu}><i className="material-icons">close</i></a>
-                <a href="#" className="brand-logo right navMenu" onClick={this.dropMenu}><i className="material-icons">menu</i></a>
-            </nav>
-        </div>
+            <div className="menuCont">
+                <DropNavbar/>
+                <nav className="navCont z-depth-0">
+                    <Link to="/"><span href="##" className="brand-logo navLogo left">BS</span></Link>
+                    <span href="##" className="brand-logo center navClose" onClick={this.closeMenu}><i className="material-icons">close</i></span>
+                    <span href="##" className="brand-logo right navMenu" onClick={this.dropMenu}><i className="material-icons">menu</i></span>
+                </nav>
+            </div>
         </BrowserRouter>
     )
   }
@@ -74,7 +67,7 @@ const mapStateToProps = (state) => {
     return { 
         Reveal: state.pageNum,
         binderScroll: state,
-        ThemeChange: (pageData) => { ThemeChange(pageData) }
+        ThemeChange: (pageData) => { ThemeChange(pageData) },
     }
 }
 

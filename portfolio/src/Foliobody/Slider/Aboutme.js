@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
+// import PropTypes from 'prop-types'
 export class Aboutme extends Component {
   static propTypes = {
 
