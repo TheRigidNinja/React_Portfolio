@@ -1,9 +1,9 @@
 :root{
-    --MBinvertR:url('../img/BMright.png'),auto;
-    --MBinvertL:url('../img/BMleft.png'),auto;
+    --MBinvertR:url('../img/Generals/BMright.png'),auto;
+    --MBinvertL:url('../img/Generals/BMleft.png'),auto;
 
-    --MWinvertR:url('../img/WMright.png'),auto;
-    --MWinvertL:url('../img/WMleft.png'),auto;
+    --MWinvertR:url('../img/Generals/WMright.png'),auto;
+    --MWinvertL:url('../img/Generals/WMleft.png'),auto;
     
     --MouseR:var(--MWinvertR);
     --MouseL:var(--MWinvertL);

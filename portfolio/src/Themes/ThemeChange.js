@@ -11,7 +11,6 @@ var Themes = {
     Project5: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
     Project6: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
     Project7: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
-    Project8: { "--navIcons": "black", "--MouseR":"var(--MBinvertR)", "--MouseL": "var(--MBinvertL)"},
     Contacts: { "--navIcons": "#fafafa" }
 }
 

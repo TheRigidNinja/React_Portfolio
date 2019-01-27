@@ -12,11 +12,8 @@ body{
 p{
     font-weight: 350;
 }
-/* 
-.right{
-    margin-right:50px !important; 
-}
-*/
+
+
 
 .tracNum{
     position: absolute;
@@ -25,5 +22,30 @@ p{
     color: var(--navIcons);
     z-index: 10;
     opacity: 0;
-    
 } 
+
+.iconMobNext{
+    position: absolute;
+    display: none;
+    left: calc(100% - 65px);
+    top: calc(100% - 45px);
+    width: 60px;
+    height: 40px;
+    background-image: url(./img/Generals/WMright.png);
+    background-repeat: no-repeat;
+    background-position: 23px 8px;
+    background-size: 15px;
+
+    
+}
+
+
+@media screen and (max-width: 600px) {
+    .tracNum{
+        display: none;
+    }
+
+    .iconMobNext{
+        display: block;
+    }
+}

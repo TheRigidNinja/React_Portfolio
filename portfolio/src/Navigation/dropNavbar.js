@@ -15,10 +15,10 @@ function dropNavbar() {
         <span href="#" className="grey-text text-lighten-5"><i className="fa fa-codepen"></i></span>
       </div>
 
-      <h6 className="grey-text text-lighten-5 center text-center copyright">
+      <p className="grey-text text-lighten-5 center text-center copyright">
         Copyright © 2019 <br/>
       Made with love by Brian Shisanya.
-      </h6>
+      </p>
     </div>
   )
 }
