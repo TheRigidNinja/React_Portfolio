@@ -1,67 +1,53 @@
 import React, { Component } from 'react'
 import Navbar from './Navigation/Navbar'
 import Sliders from './Foliobody/IndexSlider'
-import $ from "jquery";
-import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
+import $ from "jquery";
 
+
+function isTouchDevice() {return typeof window.ontouchstart !== 'undefined';}
 class Portfolio extends Component {
-  state = {
-    pageNum: 0
-  };
 
-  handlingThemes = () => {
-    console.log(0)
-  };
+  componentDidMount(){
+    if (isTouchDevice() === true) {
+      document.querySelector("body").style.cursor="pointer"
+    }
 
-  // componentDidMount() {
-  //   $(window).bind("resize", this.Winresize);
-  //   this.Winresize();
-  // }
+    window.addEventListener('load', this.removeLoader);
+  }
 
-  // Winresize = () =>{
-  //   console.log(0)
-  // }
+  removeLoader = () =>{
+    $(".Loader").animate({"opacity":0},3000,()=>{
+      $(".Loader").css("display","none");
+    })
+  }
+
 
   render() {
+    console.log(this.props)
     const Tracker = () => {
-      return $(window).width() > 800 ? (
-        <div className="tracNum">
-          0{this.props.pageNum}/09
-        </div>
-      ) : (
-        <Button
-          variant="outlined" className="grey lighten-5 mobNext">
-          <i className="material-icons iconMobNext">arrow_forward_ios</i>
-        </Button>
-      );
-    };
+      return <div><span className="tracNum">0{this.props.pageNum}/07</span></div>
+    }
 
-    return (
+    return(
       <div>
-        <Sliders />
-        <Navbar />
-        <Tracker />
+      <div className="Loader">
+        <div className="dot"></div>
+        <div className="ping"></div>
       </div>
-    );
+       <Tracker />
+       <Navbar />
+        <Sliders />
+      </div>
+    )
   }
 }
 
 
 
 const mapStateToProps = (state) => {
-  let mypageData = state.pageNum; 
-    return{
-      pageNum: mypageData
-    }
+    return { pageNum: state.pageNum };
 }
 
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     deletePost: (id) => { dispatch(deletePost(id)) }
-//   }
-// }
-
+// export default Portfolio;
 export default connect(mapStateToProps)(Portfolio);
-// export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

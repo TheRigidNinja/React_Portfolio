@@ -1,23 +1,180 @@
+
 body{
-    margin: 0px;
+    margin:0px;
     padding: 0px;
-    line-height: 1.3125;
-    font-weight: 500;
-    /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
-    /* overflow-y: scroll;
-    overflow-x: hidden;   */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: 'Yantramanav', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;   
+    -ms-user-select: none;    
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    background: black;
 }
 
-
-.right{
-    margin-right:50px !important; 
-}
-
+p{ font-weight: 350;}
 
 .tracNum{
+    opacity: 0;
     position: absolute;
     top: calc(100% - 30px);
     left: calc(50% - 20px);
     color: var(--navIcons);
-    /* opacity: 0; */
+    z-index: 9;
+} 
+
+/* ------------------------- Loader --------------------------- */
+.Loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: radial-gradient(#272727 10%, #000001);
+    z-index: 20;
+  }
+  .Loader .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 3px;
+    background: rgba(26, 159, 183, 0.8);
+    border-radius: 50%;
+    z-index: 3;
+  }
+  .Loader .ping {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    box-shadow: inset 0 0 200px rgba(26, 159, 183, 0);
+    border: 1px solid rgba(26, 159, 183, 0);
+    border-radius: 50%;
+    animation: ping 2s ease infinite;
+    z-index: 2;
+    will-change: animation;
+  }
+  
+  @keyframes ping {
+    0% {
+      width: 0px;
+      height: 0px;
+      box-shadow: inset 0 0 200px rgba(26, 159, 183, 0.2);
+      border: 1px solid rgba(26, 159, 183, 0.8);
+    }
+    60% {
+      box-shadow: inset 0 0 200px rgba(26, 159, 183, 0);
+      border: 1px solid rgba(26, 159, 183, 0.2);
+    }
+    90% {
+      width: 120vmin;
+      height: 120vmin;
+      border: 1px solid rgba(26, 159, 183, 0);
+    }
+  }
+  
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    /* ------------------------- Home --------------------------- */
+    .navLogo,
+    .material-icons{
+        font-size: 25px !important;
+        margin: 0px 20px 0px 10px !important;
+    }
+
+    .navLogo{
+        top: 10px;
+        background-size: 60px 60px;
+        height: 59px;
+    }
+
+    .Home .Slide div{
+        padding: 30% 10% 0px 10%;
+        width: 100%;
+        text-align: center
+    }
+
+    .homeContent{font-size: 6vw;}
+    .subtitle:before{margin-left: calc(50% - 40px);}
+
+
+    /* --------------------------- More Information Projects ---------------------------- */
+    .moreInfo .intro,.moreInfo h4{text-align: center;}
+    .moreInfo .intro p{font-size: 18px !important;font-weight: 200}
+
+     .moreInfo h4::after{
+         position: relative;
+         left: calc(50% - 20px);
+     }
+
+    /* ------------------------- Projects --------------------------- */
+    .BriefDetails{display: none}
+    .tracNum{display: none;}
+    .MobNext{display: block;}
+
+    /* Projects Link buttons */
+    .ProjectLinks button span{display: none;}
+    .ProjectLinks button {width: 105;}
+
+
+/* ------------------------- Images for projects --------------------------- */
+    .Project1 .Slide{
+        background-image: url(./img/Project1/img2Mob.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: fixed;
+    }
+
+   .Project2 .Slide{
+        background-image: url(./img/Project2/img2Mob.png);
+        background-position: 0% -2px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .Project3 .Slide{
+        background-image: url(./img/Project3/img1.png);
+        background-position: -260px -50px;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+  
+    .Project4 .Slide{
+        background-image: url(./img/Project4/img2Mob.png);
+        background-position: -10px 0px;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+    
+
+    .Project5 .Slide{
+        background-image: url(./img/Project5/img8.png);
+        background-position: -600px 0px;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+
+
+    .Project6 .Slide{
+        background-image: url(./img/Project6/img2.png);
+        background-position: -450px 60px;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+    } 
+
 }

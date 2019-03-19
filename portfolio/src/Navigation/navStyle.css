@@ -1,45 +1,44 @@
-
 .menuCont{
+    margin: 0px;
+    transition: all 0.6s;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.navLogo,
+.navClose,
+.navMenu{
+    position: absolute;
+    transition: all 0.4s;
+    z-index: 10;
+}
+
+.navLogo,
+.material-icons{
+    cursor: pointer;
+    font-weight: 900;
     position: relative;
-    z-index: 11;
-    /* overflow: hidden; */
-    
-}
- .menu{
-    transition: all 0.2s;
-    position: absolute;
-    right: 8%;
-}
-
-.logo{
-    position: absolute;
-    left: 8%;
-}
-
-.navMenu,
-.logo{
-    transition: all 0.3s;
+    color:var(--navIcons) !important;
     font-size: 35px !important;
-    color:var(--navIcons)
+    margin: 20px 80px 0px 80px !important;
+    height: 0px;
+} 
+
+.navLogo {
+    position: relative;
+    width: 80px;
+    height: 95px !important;
+    background-image:var(--Logo);
+    background-repeat: no-repeat !important;
 }
 
-.menuClose{
-    display: none;
-    position: absolute;
-    left:calc(50% - 15px);
-    margin-top: 10px;
-}
-.menuClose i{
-    font-size: 50px !important;
+.navClose{
+    display: none !important;
+    z-index: 9;
 }
 
-
-.menuClose i:hover{
-    font-size: 40px !important;
-    transform: translateX(2px)
-}
-
-
+.navCont{background: transparent;}
 
 .dropMenu{
     position: absolute;
@@ -50,16 +49,21 @@
     overflow: hidden;
     height: 0px;
     background: #0a0a0a;
+    z-index: 10;
+    
 }
 
 .dropLink{
     position: relative;
     top: calc(50% - 150px);
+    color: #fafafa !important;
 }
 .social a,
 .dropLink h2{
+    font-weight: 600;
     transition: all 0.2s;
     cursor: pointer;
+    color: #fafafa !important;
 }
 .social a:hover,
 .dropLink h2:hover{
@@ -70,6 +74,7 @@
 .social{
     position: relative;
     top: calc(100% - 400px);
+    margin-right:50px;
 }
 
 
@@ -78,26 +83,16 @@
     margin-left: 35px;
 }
 
-
 .copyright{
     position: relative;
-    top: calc(100% - 300px);
+    margin: 80px 0px 0px 40px;
 }
 
-/* scrollbar */
  ::-webkit-scrollbar {
-  width: 15px;
+     background: none;
+     width: 0px;
 }
 
-::-webkit-scrollbar-track {
-  background: #e7e7e7; 
-}
+::-webkit-scrollbar-track {background: none; }
 
-::-webkit-scrollbar-thumb {
-  background: rgb(200, 200, 200); 
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+::-webkit-scrollbar-thumb {background: none }

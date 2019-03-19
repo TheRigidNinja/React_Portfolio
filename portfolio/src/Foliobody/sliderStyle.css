@@ -1,25 +1,40 @@
-/* Mouse Cursor Change */
+
 .Curight{cursor: var(--MouseR)}
 .Culeft{cursor: var(--MouseL)}
 .defaultMouse{cursor: default;}
 
+
+.homeContent{font-size: 3vw;}
+
+h2{font-weight: 700;}
 .Slide{
     position: absolute;
     padding: 0px;
     margin: 0px;
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    background:#fafafa;
 }
 
-.navProject{
-    position: relative;
-    padding: 20px 40px 20px 40px !important;
-    top: 50%;
-    left:100px;
+.MobNext{display: none}
+.iconMobNext{
+    position: absolute;
+    left: calc(100% - 90px);
+    top: calc(100% - 60px);
+    width: 60px;
+    height: 45px;
+    background-image: url(../img/Generals/BMright.png);
+    background-repeat: no-repeat;
+    background-position: 23px 8px;
+    background-size: 15px; 
+    background-color: transparent !important;
+    border: 1px solid black;
 }
 
+.iconMobNext:hover{
+    background-image: url(../img/Generals/WMright.png);
+    background-color: rgb(70, 70, 70) !important;
+}
 
 .Home,
 .Project1,
@@ -28,21 +43,111 @@
 .Project4,
 .Project5,
 .Project6,
-.Project7,
-.Project8,
-.Aboutme{
+.Contacts{
     position: absolute;
     overflow: hidden;
-    z-index: -1;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
 }
 
-.Home{
-    z-index: 2;
-} 
-
-.Home div{
-    padding: 10% 0px 0px 90px;
+.Home{z-index: 5;}
+.Home .Slide div{
+    padding: 10% 0px 0px 80px;
     width: 55%;
+}
+
+.Project4 h3,
+.Project5 h3,
+.Project4 .BriefDetails p,
+.Project5 .BriefDetails p{
+    color: #fafafa
+}
+
+
+/* Handle page speed */
+.Project3,
+.Project4,
+.Project5,
+.Project6,
+.Contacts{
+    display: none;
+}
+
+
+
+
+
+.MoreProjects{
+    position: absolute;
+    top: 100%;
+    height: 0px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: -9;
+}
+
+.Contacts h1,.Contacts p {
+    position: relative;
+    margin-top: -30px;
+    color: #fafafa;
+    max-width: 1000px;
+    width: 60% !important;
+}
+
+
+.Contacts p {
+    padding-top: 30px !important;
+}
+
+.contactBTN{
+    position: absolute;
+    background: transparent !important;
+    color: #fafafa;
+    border: 2px solid #fafafa;
+    font-size: 20px;
+    font-weight: 500;
+    left: calc(50% - 100px);
+    top: calc(100% - 100px);
+    z-index: 0;
+    
+}
+.Contacts a{
+    color: #fafafa;
+}
+
+.contactBTN:hover{
+    background: #fafafa !important;
+    color: black;
+}
+
+
+.contactBTN:hover a{
+    color: black;
+}
+
+
+.BriefDetails{
+    transition: all 0.2s;
+    position: absolute;
+    height: 150px;
+    margin-left: 80px;
+    top:35%;
+    padding-right: 15%;
+}
+
+.BriefDetails h3{
+    width:450px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.BriefDetails p{
+    width:450px;
+    margin-top: -20px;
+    font-size:25px;
+    font-weight: 400;
 }
 
 
@@ -56,42 +161,45 @@
     margin: 30px 0px 30px 0px;
 }
 
-
-/* 
-.mobNext{
-    position: absolute !important;
-    top: calc(100% - 60px);
-    left: calc(100% - 120px);
-    padding: 10px 20px 10px 20px !important; 
-} */
-
  .viewProject{
     position: absolute !important;
-    top:60%;
+    margin-top: 30px;
     background: #fafafa;
     color: black;
-    border: 2px solid black !important;
-    left: calc(30px + 5.5%);
+    border: 2.2px solid black !important;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .viewProject:hover{
     background: black !important;
     color:  #fafafa;
 }
+
+
 .moreInfo{
     position: absolute;
     top: 100%;
     width: 100%;
-    height: 500px;
+    height: auto;
+    background:#fafafa;
+    padding: 0px;
+    margin: 0px;
+    display: none;
 }
 
+.moreInfo p{
+    font-size:25px;
+    font-weight: 350;
+
+}
+ 
 .row{
     position: relative;
     min-width: 260px;
     font-size: 18px;
-    padding: 50px 5% 0px 5%;
+    padding: 9px 5% 0px 5%;
 }
-
 
 .row h4:after{
     content: "";
@@ -102,24 +210,146 @@
     background: #512da8;
     margin: 30px 0px 30px 0px;
 }
- 
-.intro{
-    padding-left: 3% !important;
+
+.row div{margin-bottom: 50px;}
+
+
+
+/*--------------------------------------------Project Links / More details ------------------------------------------- */
+.ProjectLinks button{
+    text-align: center;
+    width: 150px;
+    margin-left: 25px;
+    color: black;
+    background: #ffecc7 !important;
+    font-weight: 500
 }
 
-.row div{
-    margin-bottom: 30px;
+
+.ProjectLinks i{
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 
-@media screen and (min-width: 1000px) {
-    .details{
-        padding: 5%  20% 0% 15% !important;
+.ProjectLinks{
+    position: relative;
+    text-align: center;
+    top: 20px;
+}
+
+.details header{
+    margin-bottom: 20px;
+}
+.details{text-align: center}
+.details img{
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px 3px rgba(165, 165, 165, 0.1) 
+}
+
+.Project1 .Slide,
+.Project2 .Slide,
+.Project3 .Slide,
+.Project4 .Slide,
+.Project5 .Slide,
+.Project6 .Slide{
+    transition: background 0.4s;
+}
+
+
+
+.Project1 .Slide{
+    background-image: url(../img/Project1/img1.png);
+    background-position: 100% 60%;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-attachment: fixed;
+}
+
+.Project2 .Slide{
+    background-image: url(../img/Project2/img1.png);
+    background-position: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #efefef;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width:1400px) {
+    .Project2 .Slide{
+        background-position: 80% 220px;
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .details{
-        padding-left: 7% !important;
-    }
+.Project3 .Slide{
+    background-image: url(../img/Project3/img1.png);
+    background-position: 80% 60px;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-attachment: fixed;
+}
+.Project4 .Slide{
+    background-image: url(../img/Project4/img1.png);
+    background-position: 0% -20%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.Project5 .Slide{
+    background-image: url(../img/Project5/img1.png);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size:60%;
+    background-attachment: fixed;
+}
+.Project6 .Slide{
+    background-image: url(../img/Project6/img1.png);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size:60%;
+    background-attachment: fixed;
+}
+
+
+
+.Project5 .intextBTN{
+    margin-left: 20px;
+    text-align: center;
+    width: 80px;
+    height: 20px;
+    padding-bottom: 50px;
+
+}
+
+
+
+
+
+footer{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0%;
+    color: #fafafa;
+    padding: 70px 0px 40px 0px;
+}
+
+footer a{
+    font-size: 16px !important;
+
+}
+
+.center span{
+    color: #512da8;
+}
+
+.Footermedia a i{
+    transition: all 0.2s;
+    margin: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.Footermedia a i:hover{
+    color: #512da8;
 }

@@ -1,48 +1,15 @@
 :root{
-    --MBinvertR:url('../img/BMright.png'),auto;
-    --MBinvertL:url('../img/BMleft.png'),auto;
+    --MBinvertR:url('../img/Generals/BMright.png'),auto;
+    --MBinvertL:url('../img/Generals/BMleft.png'),auto;
+    --MWinvertR:url('../img/Generals/WMright.png'),auto;
+    --MWinvertL:url('../img/Generals/WMleft.png'),auto;
 
-    --MWinvertR:url('../img/WMright.png'),auto;
-    --MWinvertL:url('../img/WMleft.png'),auto;
+    --LogoB:url('../img/Generals/Body_Icon_B.svg');
+    --LogoW:url('../img/Generals/Body_Icon_W.svg');
     
     --MouseR:var(--MWinvertR);
     --MouseL:var(--MWinvertL);
     --navIcons:#fafafa;
     --bgColor:black;
+    --Logo:var(--LogoW)
 }
-
-
-
-
-
-
-/* 
-.Mlight,
-.Mmenu{
-    transition: all 0.2s;
-    color:#fafafa !important;
-}
-
-.Mmenu{transform: rotateZ(90deg)}
-
-
-.MlightRm,
-.MmenuRm{
-    transition: all 0.4s;
-    color:black !important;
-}
-.MmenuRm{transform: rotateZ(0deg)}
-
-
-
-.mouseLight{
-    cursor: url('../img/Wright.png'),auto;
-}
-
-.mouseLightRm{
-    cursor: url('../img/Wleft.png'),auto;
-}
-
-.defaultMouse{
-   cursor: default; 
-} */
